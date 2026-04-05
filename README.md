@@ -12,7 +12,9 @@
 <br>
 7. Edit it how you want, I recommend watching some videos on how to use python.py or look at some reddit threads
 <br>
-8. Have fun :3
+8. Run start.sh or start.cmd depending on your operating system
+<br>
+9. Have fun :3
 
 # Tested on:
 Windows 11 using python version 3.14.3
