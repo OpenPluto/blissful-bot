@@ -11,3 +11,6 @@
 6. Edit it how you want, I recommend watching some videos on how to use python.py or look at some reddit threads
 <br>
 7. Have fun :3
+
+# Tested on:
+Windows 11 using python version 3.14.3
