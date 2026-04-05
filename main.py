@@ -25,7 +25,7 @@ async def ping(interaction: discord.Interaction):
     await interaction.response.send_message(f'pong')
 
 @bot.tree.command(name = 'coinflip')
-async def ping(interaction: discord.Interaction):
+async def coinflip(interaction: discord.Interaction):
     o = ['Heads', 'Tails']
     output = random.choice(o)
     await interaction.response.send_message(f'The coin landed on {output}')
