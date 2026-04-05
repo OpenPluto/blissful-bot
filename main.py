@@ -1,4 +1,4 @@
-# made with <3 from pluto
+# Made with <3 by pluto
 import discord
 from discord.ext import commands
 from discord import app_commands
@@ -55,6 +55,23 @@ async def gif(ctx,*,q="Anime"):
         await ctx.channel.send(embed=embed)
     except ApiException as r:
         print("Exception from api")
+
+#uhnime / command
+@bot.tree.command(name='gif')
+async def gif(interaction: discord.Interaction, q: str = "Anime"):
+    api_instance = giphy_client.DefaultApi()
+    try:
+        api_response = api_instance.gifs_search_get(api_key, q, limit=5, rating='g')
+        lst = list(api_response.data)
+        giff = random.choice(lst)
+
+        embed = discord.Embed(title=q)
+        embed.set_image(url=f"https://media.giphy.com/media/{giff.id}/giphy.gif")
+
+        await interaction.response.send_message(embed=embed)
+    except ApiException as r:
+        print("Exception from api")
+
 
 #start bot
 bot.run(token)
