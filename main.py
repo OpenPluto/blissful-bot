@@ -42,7 +42,7 @@ async def astolfo(interaction: discord.Interaction):
 
 #uhnime
 @bot.command(name = 'gif')
-async def gif(ctx,*,q="Anime"):
+async def gif(ctx,*,q="cat"):
     api_instance = giphy_client.DefaultApi()
     try:
         api_response = api_instance.gifs_search_get(api_key, q, limit=5, rating='g')
