@@ -110,7 +110,7 @@ async def meow(ctx,*,q="catgirl"):
         lst = list(api_response.data)
         giff = random.choice(lst)
 
-        embed = discord.Embed(title=q)
+        embed = discord.Embed(title='meow :3')
         embed.set_image(url=f"https://media.giphy.com/media/{giff.id}/giphy.gif")
 
         await ctx.channel.send(embed=embed)
