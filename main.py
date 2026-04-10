@@ -83,7 +83,7 @@ async def meow(interaction: discord.Interaction):
         api_response = api_instance.gifs_search_get(api_key, q, limit=5, rating='g')
         lst = list(api_response.data)
         giff = random.choice(lst)
-        embed = discord.Embed(title=q)
+        embed = discord.Embed(title='meow :3')
         embed.set_image(url=f"https://media.giphy.com/media/{giff.id}/giphy.gif")
         await interaction.response.send_message(embed=embed)
     except ApiException as r:
