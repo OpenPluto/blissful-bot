@@ -71,7 +71,7 @@ async def meow(interaction: discord.Interaction):
     await interaction.response.send_message('https://tenor.com/8ijz.gif')
 @bot.tree.command(name = 'freaky')
 async def freaky(interaction: discord.Interaction):
-    await interaction.response.send_message('https://media.giphy.com/media/vPzbDN4rBxuvtpSpzF/giphy.gif')
+    await interaction.response.send_message('https://tenor.com/view/freaky-cat-cat-freaky-cat-freaky-tongue-freaky-cat-tongue-freaky-tongue-gif-11560619178986255398')
 @bot.command(name = 'rawr')
 async def rawr(ctx):
     await ctx.channel.send('https://tenor.com/bFGYi.gif')
@@ -80,6 +80,13 @@ async def meow(ctx):
         await ctx.channel.send('https://tenor.com/8ijz.gif')
 @bot.command(name = 'freaky')
 async def freaky(ctx):
-        await ctx.channel.send('https://media.giphy.com/media/vPzbDN4rBxuvtpSpzF/giphy.gif')
+        await ctx.channel.send('https://tenor.com/view/freaky-cat-cat-freaky-cat-freaky-tongue-freaky-cat-tongue-freaky-tongue-gif-11560619178986255398')
+
+@bot.tree.command(name = 'license')
+async def license(interaction: discord.Interaction):
+    await interaction.response.send_message('https://github.com/OpenPluto/blissful-bot/blob/main/LICENSE')
+@bot.command(name = 'license')
+async def license(ctx):
+    await ctx.channel.send('https://github.com/OpenPluto/blissful-bot/blob/main/LICENSE')
 #start bot
 bot.run(token)
