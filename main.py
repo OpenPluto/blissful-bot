@@ -3,6 +3,9 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 from dotenv import load_dotenv
+import bs4
+import requests
+from bs4 import BeautifulSoup
 import os
 import random
 import giphy_client
@@ -112,5 +115,16 @@ async def help(ctx):
     embed.add_field(name="/freaky", value="Sends a freaky cat GIF", inline=False)
     embed.add_field(name="/license", value="Provides a link to the bot's license on GitHub", inline=False)
     await ctx.channel.send(embed=embed)
+#anime search: finds anime based by a title, for example, the default query would be "charlotte" to test if its able to find that anime and send a proper link to the anime page on MAL
+@bot.tree.command(name = 'animesearch')
+async def animesearch(interaction: discord.Interaction, q: str = "charlotte"):
+    url = f"https://myanimelist.net/anime.php?q={q}"
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    anime_link = soup.find('a', class_='hoverinfo_trigger fw-b fl-l')
+    if anime_link:
+        await interaction.response.send_message(f"{anime_link['href']}")
+    else:
+        await interaction.response.send_message("Anime not found.")
 #start bot
 bot.run(token)
